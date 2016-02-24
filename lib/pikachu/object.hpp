@@ -1,5 +1,5 @@
-#ifndef _OBJECT_H
-#define _OBJECT_H
+#ifndef _PIKACHU_OBJECT_H
+#define _PIKACHU_OBJECT_H
 
 namespace Pikachu {
   class Object {

@@ -12,14 +12,16 @@ endif()
 include_directories("${PROJECT_SOURCE_DIR}")
 include_directories("${PROJECT_SOURCE_DIR}/lib")
 add_subdirectory("${PROJECT_SOURCE_DIR}/lib")
+include_directories("${PROJECT_SOURCE_DIR}/src")
+add_subdirectory("${PROJECT_SOURCE_DIR}/src")
 
 # Define sources and executable
 set(EXECUTABLE_NAME "game")
-add_executable(${EXECUTABLE_NAME} main.cpp)
+add_executable(${EXECUTABLE_NAME} main.cc)
 target_link_libraries(${EXECUTABLE_NAME} pikachu)
 
 # C++11
-set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -std=c++0x -Wall -Wextra -pedantic")
+set (CMAKE_CXX_STANDARD 11)
 
 # Install target
 install(TARGETS ${EXECUTABLE_NAME} DESTINATION bin)

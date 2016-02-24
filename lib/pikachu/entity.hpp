@@ -1,13 +1,21 @@
-#ifndef _ENTITY_H
-#define _ENTITY_H
+#ifndef _PIKACHU_ENTITY_H
+#define _PIKACHU_ENTITY_H
 
 #include <string>
 
 namespace Pikachu {
   class Entity {
   public:
-    Entity(unsigned int level, unsigned int health, std::string name)
-      : _level(level), _health(health), _name(name) {};
+    enum Type {
+      NPC,
+      PLAYER,
+      UNKNOWN
+    };
+    
+    Entity(unsigned int level, unsigned int health, std::string name, Type type)
+      : _level(level), _health(health), _name(name), _type(type) {
+      _currentHealth = health;
+    };
 
     unsigned int getLevel() const {
       return _level;
@@ -20,10 +28,16 @@ namespace Pikachu {
     std::string getName() const {
       return _name;
     }
-  protected:
+
+    Type getType() const {
+      return _type;
+    }
+  private:
     unsigned int _level;
     unsigned int _health;
+    unsigned int _currentHealth;
     std::string _name;
+    Type _type;
   };
 }
 
