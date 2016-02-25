@@ -2,6 +2,11 @@
 cmake_minimum_required(VERSION 2.6)
 project(game CXX)
 
+# C++11
+if(UNIX)
+    SET(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -Wall -std=gnu++0x")
+endif()
+
 # Enable debug symbols by default
 if(CMAKE_BUILD_TYPE STREQUAL "")
   set(CMAKE_BUILD_TYPE Debug)
@@ -19,9 +24,6 @@ add_subdirectory("${PROJECT_SOURCE_DIR}/src")
 set(EXECUTABLE_NAME "game")
 add_executable(${EXECUTABLE_NAME} main.cc)
 target_link_libraries(${EXECUTABLE_NAME} pikachu src)
-
-# C++11
-set (CMAKE_CXX_STANDARD 11)
 
 # Install target
 install(TARGETS ${EXECUTABLE_NAME} DESTINATION bin)

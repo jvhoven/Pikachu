@@ -22,10 +22,15 @@ namespace Pikachu {
     std::string getName() const {
       return _name;
     }
+
+    bool isStackable() const {
+      return _stackable;
+    }
   private:
     std::string _name;
     Type _type;
     std::string _description;
+    bool _stackable;
   };
 }
 
