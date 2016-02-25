@@ -1,4 +1,6 @@
-file(GLOB_RECURSE sources system/*.cpp)
+file(GLOB_RECURSE entities entities/*.cpp)
+file(GLOB_RECURSE items items/*.cpp)
+file(GLOB_RECURSE objects objects/*.cpp)
 
-add_library(src ${sources})
-set_target_properties(src PROPERTIES LINKER_LANGUAGE CXX)
+add_library(src ${entities} ${items} ${objects})
+set_target_properties(pikachu PROPERTIES LINKER_LANGUAGE CXX)

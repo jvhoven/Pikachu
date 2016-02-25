@@ -10,7 +10,8 @@ namespace Pikachu {
       TRASH,
       WEAPON,
       MATERIAL,
-      FOOD
+      FOOD,
+      QUEST
     };
 
     Item(std::string name, Type type, std::string description)

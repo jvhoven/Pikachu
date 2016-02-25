@@ -18,7 +18,7 @@ add_subdirectory("${PROJECT_SOURCE_DIR}/src")
 # Define sources and executable
 set(EXECUTABLE_NAME "game")
 add_executable(${EXECUTABLE_NAME} main.cc)
-target_link_libraries(${EXECUTABLE_NAME} pikachu)
+target_link_libraries(${EXECUTABLE_NAME} pikachu src)
 
 # C++11
 set (CMAKE_CXX_STANDARD 11)
