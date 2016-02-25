@@ -1,6 +1,11 @@
-#Change this if you need to target a specific CMake version
+# Change this if you need to target a specific CMake version
 cmake_minimum_required(VERSION 2.6)
-project(game CXX)
+project(game)
+
+# C++11
+if(UNIX)
+    SET(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -Wall -std=gnu++0x")
+endif()
 
 # C++11
 if(UNIX)

@@ -8,7 +8,7 @@ int main() {
   Player player(1, 120, "Henk de Vries", Pikachu::Entity::PLAYER);
   player.inventory().addItem(cheese);
 
-  std::cout << player.inventory().getItem(0).getName() << std::endl;
+  std::cout << player.inventory().getItem(0)->getName() << std::endl;
 
   return 0;
 }

@@ -2,8 +2,9 @@
 #define _INVENTORY_H
 
 #include <vector>
-#include <iostream>
-#include "pikachu/base/item.hpp"
+#include <algorithm>
+#include <memory>
+#include "pikachu/system/inventoryslot.h"
 
 namespace Pikachu {
   class Inventory {
@@ -11,10 +12,15 @@ namespace Pikachu {
     Inventory();
     void addItem(Pikachu::Item item);
     void show();
-    const Pikachu::Item& getItem(unsigned int index);
+    const Pikachu::Item* getItem(unsigned int index);
+    std::unique_ptr<Pikachu::InventorySlot> getInventorySlot(Pikachu::Item* item);
+    bool isFull() const;
   private:
-    const unsigned int MAX = 16;
-    std::vector<Pikachu::Item> _items;
+    const unsigned int MAX_SLOTS = 16;
+    std::vector<std::unique_ptr<Pikachu::InventorySlot>> _slots;
+
+    std::unique_ptr<Pikachu::InventorySlot> const& find(Pikachu::Item* item);
+    std::unique_ptr<Pikachu::InventorySlot> getFreeSlot();
   };
 }
 
