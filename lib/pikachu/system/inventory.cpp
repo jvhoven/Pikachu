@@ -1,5 +1,8 @@
 #include "inventory.h"
 
+/*
+* Prepopulate our vector because we always want 16 InventorySlot objects ready.
+ */
 Pikachu::Inventory::Inventory() {
   _slots = std::vector<Pikachu::InventorySlot>(MAX_SLOTS);
   std::generate(_slots.begin(), _slots.end(), [&]{ return Pikachu::InventorySlot(); });
@@ -13,20 +16,26 @@ void Pikachu::Inventory::addItem(shared_item item) {
     std::cerr << "Inventory is full!" << std::endl;
   } else {
     Pikachu::InventorySlot& slot = getInventorySlot(item, item->isStackable());
-    std::cout << "Added item " << item->getName() << " to inventory." << std::endl;
     slot.addItem(item);
   }
 }
 
 /*
-* Returns the item or a nullptr if the given slot is empty.
+* Returns read only variable of the item or a nullptr if the given slot is empty.
  */
-Pikachu::Item* Pikachu::Inventory::getItem(unsigned int index) {
+const Pikachu::Item *const Pikachu::Inventory::getItem(unsigned int index) {
   if(_slots.at(index).isEmpty()) {
     return nullptr;
   }
 
   return _slots.at(index).getItem();
+}
+
+/*
+* Returns the inventory slot at position.
+ */
+Pikachu::InventorySlot Pikachu::Inventory::getSlot(unsigned int index) const {
+  return _slots.at(index);
 }
 
 /*

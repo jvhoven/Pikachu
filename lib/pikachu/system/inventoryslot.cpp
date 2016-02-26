@@ -14,7 +14,12 @@ void Pikachu::InventorySlot::addItem(shared_item item) {
     }
   } else {
     _item = item.get();
+    _quantity = 1;
   }
+}
+
+int Pikachu::InventorySlot::getQuantity() const {
+  return _quantity;
 }
 
 Pikachu::Item* Pikachu::InventorySlot::getItem() {

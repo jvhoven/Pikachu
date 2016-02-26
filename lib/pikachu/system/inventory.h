@@ -14,7 +14,8 @@ namespace Pikachu {
   public:
     Inventory();
     void addItem(shared_item item);
-    Pikachu::Item* getItem(unsigned int index);
+    const Pikachu::Item *const getItem(unsigned int index);
+    Pikachu::InventorySlot getSlot(unsigned int index) const;
     Pikachu::InventorySlot& getInventorySlot(shared_item item, bool stack);
     bool isFull() const;
   private:

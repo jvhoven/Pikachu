@@ -29,6 +29,10 @@ namespace Pikachu {
     bool isStackable() const {
       return _stackable;
     }
+
+    void setStackable(bool b) {
+      _stackable = b;
+    }
   private:
     std::string _name;
     Type _type;
