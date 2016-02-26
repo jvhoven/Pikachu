@@ -11,11 +11,15 @@ namespace Pikachu {
       PLAYER,
       UNKNOWN
     };
-    
+
     Entity(unsigned int level, unsigned int health, std::string name, Type type)
       : _level(level), _health(health), _name(name), _type(type) {
       _currentHealth = health;
     };
+
+    virtual ~Entity() {
+      
+    }
 
     unsigned int getLevel() const {
       return _level;

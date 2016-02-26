@@ -11,7 +11,7 @@ endif()
 if(CMAKE_BUILD_TYPE STREQUAL "")
   set(CMAKE_BUILD_TYPE Debug)
 endif()
-# (you can also set it on the command line: -D CMAKE_BUILD_TYPE=Release)
+
 
 # Include subdirs
 include_directories("${PROJECT_SOURCE_DIR}")

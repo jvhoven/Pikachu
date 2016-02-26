@@ -1,7 +1,7 @@
 {
   "execPath": "/usr/bin/g++",
-  "gccDefaultCFlags": "-Wall",
-  "gccDefaultCppFlags": "-Wall -std=c++11",
+  "gccDefaultCFlags": "-Wall -std=gnu++0x",
+  "gccDefaultCppFlags": "-Wall -std=gnu++0x",
   "gccErrorLimit": 15,
   "gccIncludePaths": ".,./lib,./src",
   "gccSuppressWarnings": true

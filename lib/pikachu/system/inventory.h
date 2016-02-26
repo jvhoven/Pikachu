@@ -3,18 +3,26 @@
 
 #include <vector>
 #include <iostream>
-#include "pikachu/base/item.hpp"
+#include <algorithm>
+#include <memory>
+#include "pikachu/system/inventoryslot.h"
+
+typedef std::shared_ptr<Pikachu::Item>& shared_item;
 
 namespace Pikachu {
   class Inventory {
   public:
     Inventory();
-    void addItem(Pikachu::Item item);
-    void show();
-    const Pikachu::Item& getItem(unsigned int index);
+    void addItem(shared_item item);
+    Pikachu::Item* getItem(unsigned int index);
+    Pikachu::InventorySlot& getInventorySlot(shared_item item, bool stack);
+    bool isFull() const;
   private:
-    const unsigned int MAX = 16;
-    std::vector<Pikachu::Item> _items;
+    const unsigned int MAX_SLOTS = 16;
+    std::vector<Pikachu::InventorySlot> _slots;
+
+    Pikachu::InventorySlot& find(shared_item item);
+    Pikachu::InventorySlot& getFreeSlot();
   };
 }
 

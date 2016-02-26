@@ -16,6 +16,9 @@ namespace Pikachu {
 
     Item(std::string name, Type type, std::string description)
       : _name(name), _type(type), _description(description) {
+    }
+
+    virtual ~Item() {
 
     }
 

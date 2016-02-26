@@ -7,13 +7,13 @@ bool Pikachu::InventorySlot::isEmpty() {
   return true;
 }
 
-void Pikachu::InventorySlot::addItem(Pikachu::Item item) {
+void Pikachu::InventorySlot::addItem(shared_item item) {
   if(!isEmpty()) {
     if(_item->isStackable()) {
       _quantity++;
     }
   } else {
-    _item = &item;
+    _item = item.get();
   }
 }
 
