@@ -3,4 +3,3 @@ file(GLOB_RECURSE items items/*.cpp)
 file(GLOB_RECURSE objects objects/*.cpp)
 
 add_library(src ${entities} ${items} ${objects})
-set_target_properties(pikachu PROPERTIES LINKER_LANGUAGE CXX)

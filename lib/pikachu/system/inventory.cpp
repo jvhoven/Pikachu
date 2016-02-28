@@ -27,7 +27,6 @@ const Pikachu::Item *const Pikachu::Inventory::getItem(unsigned int index) {
   if(_slots.at(index).isEmpty()) {
     return nullptr;
   }
-
   return _slots.at(index).getItem();
 }
 
@@ -46,7 +45,6 @@ Pikachu::InventorySlot& Pikachu::Inventory::getInventorySlot(shared_item item, b
     Pikachu::InventorySlot& slot = find(item);
     return slot;
   }
-
   return getFreeSlot();
 }
 

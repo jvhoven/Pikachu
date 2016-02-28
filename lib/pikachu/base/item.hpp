@@ -37,7 +37,7 @@ namespace Pikachu {
     std::string _name;
     Type _type;
     std::string _description;
-    bool _stackable;
+    bool _stackable = false;
   };
 }
 
