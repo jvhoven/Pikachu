@@ -5,7 +5,7 @@
 #include "src/items/cheese.h"
 
 int main() {
-  Player player2(1, 120, "Dennis van Hoven", Pikachu::Entity::PLAYER);
+  Player player2(1, 120, "Henk", Pikachu::Entity::PLAYER);
   auto whey = std::make_shared<Pikachu::Item>("Whey Poeder", Pikachu::Item::FOOD, "Gratis whey poeder");
   whey->setStackable(false);
 
